@@ -18,7 +18,8 @@ set(QT_VERSION 6)
 set(QT_COMPONENTS
         Core
         Gui
-        Quick2)
+        Quick
+        QuickControls2)
 
 # Include each component
 foreach(QT_COMPONENT ${QT_COMPONENTS})
