@@ -27,7 +27,8 @@ add_library(${CMAKE_PROJECT_NAME} STATIC
 set(LIBRARY_DEPENDENCIES
         Qt6Core
         Qt6Gui
-        Qt6Quick2
+        Qt6Quick
+        Qt6QuickControls2
         glfw3)
 
 target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE ${LIBRARY_DEPENDENCIES})
