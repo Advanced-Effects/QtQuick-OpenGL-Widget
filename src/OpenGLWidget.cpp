@@ -4,7 +4,11 @@
 #include <QPoint>
 
 QuickGLWidget::QuickGLWidget(QObject *parent = nullptr)
-        : QQuickWidget(parent) {};
+        : QQuickWidget(parent) {
+        initializeGL();
+        createGLWindow();
+        mainWindowLoop();
+};
 
 QRect QuickGLWidget::widgetGeometry() {
         // Map the widget's top-left corner to global (screen) coordinates
