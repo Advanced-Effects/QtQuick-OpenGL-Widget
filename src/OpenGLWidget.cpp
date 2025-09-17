@@ -3,7 +3,7 @@
 #include <GLFW/glfw3.h>
 #include <QPoint>
 
-QuickGLWidget::QuickGLWidget(QObject *parent = nullptr)
+QuickGLWidget::QuickGLWidget(QWidget *parent)
         : QQuickWidget(parent) {
         initializeGL();
         createGLWindow();
@@ -13,9 +13,9 @@ QuickGLWidget::QuickGLWidget(QObject *parent = nullptr)
 QRect QuickGLWidget::widgetGeometry() {
         // Map the widget's top-left corner to global (screen) coordinates
         QPoint topLeft = mapToGlobal(QPoint(0, 0));
-        QSize size = size();
+        QSize _size = size();
 
-        return QRect(topLeft, size);
+        return QRect(topLeft, _size);
 };
 
 // Returns 'false' if initialization goes wrong

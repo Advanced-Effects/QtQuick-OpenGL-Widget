@@ -10,7 +10,7 @@
 #include <QSize>
 #include <QRect>
 
-#include <QObject>
+#include <QWidget>
 #include <QQuickWidget>
 
 #include <GLFW/glfw3.h>
@@ -23,7 +23,7 @@ class QuickGLWidget : public QQuickWidget {
         Q_OBJECT
         QML_ELEMENT
 public:
-        QuickGLWidget(QObject *parent = nullptr);
+        QuickGLWidget(QWidget *parent = nullptr);
         ~QuickGLWidget() = default;
 
         // Is run every frame
