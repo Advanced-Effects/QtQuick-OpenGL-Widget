@@ -12,12 +12,16 @@ set(CMAKE_MODULE_PATH
 
 # Requirements: Qt and OpenGL
 
-include(FindQt6)
+# Find Qt6
+find_package(Qt6 REQUIRED COMPONENTS Core Gui Quick QuickWidgets QuickControls2)
+qt_standard_project_setup()
+
+# Find GLFW
 include(FindGLFW)
 
 # Add our code
 
-add_library(${CMAKE_PROJECT_NAME} STATIC
+qt_add_library(${CMAKE_PROJECT_NAME} STATIC
         src/OpenGLWidget.h
         src/OpenGLWidget.cpp
 )
@@ -25,10 +29,11 @@ add_library(${CMAKE_PROJECT_NAME} STATIC
 # Link the library with dependencies
 
 set(LIBRARY_DEPENDENCIES
-        Qt6Core
-        Qt6Gui
-        Qt6Quick
-        Qt6QuickControls2
+        Qt6::Core
+        Qt6::Gui
+        Qt6::Quick
+        Qt6::QuickWidgets
+        Qt6::QuickControls2
         glfw3)
 
 target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE ${LIBRARY_DEPENDENCIES})
