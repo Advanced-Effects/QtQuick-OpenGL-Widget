@@ -36,4 +36,4 @@ set(LIBRARY_DEPENDENCIES
         Qt6::QuickControls2
         glfw3)
 
-target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE ${LIBRARY_DEPENDENCIES})
+target_link_libraries(${CMAKE_PROJECT_NAME} PUBLIC ${LIBRARY_DEPENDENCIES})
