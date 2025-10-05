@@ -45,7 +45,7 @@ jobs:
                         - name: 📦 Upload executable
                           uses: actions/upload-artifact@v4
                           with:
-                                  name: libQtQuickOpenGLWidget.a
+                                  name: libQtQuickOpenGLWidget
                                   path: |
                                           build/libQtQuickOpenGLWidget.a
                                   if-no-files-found: error
